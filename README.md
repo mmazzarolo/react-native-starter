@@ -1,5 +1,5 @@
 ### React-Native + Redux Project structure (WIP)
-I've been playing with React-Native for a while and this is the directory structure that feels more comfortable for me.
+I've been playing with React-Native for a while and this is the directory structure that suits better a RN app for me.
 
 ```
 |-- src
