@@ -52,6 +52,9 @@ Still unsure about the `global` and `commonComponents` path...
 - [Official Facebook repo of css-layout](https://github.com/facebook/css-layout): Some essential info about react-css styling
 - [Discussion/fixes about the android slow transitions](https://github.com/facebook/react-native/issues/3049) 
 - [Some interesting stuff about stateless components](https://medium.com/@joshblack/stateless-components-in-react-0-14-f9798f8b992d#.shdm8klow)
+- [A better file structure for React/Redux](http://marmelab.com/blog/2015/12/17/react-directory-structure.html)
+- [Components, components, components](https://js.coach/react-native)
+- [Some tips on code styling](https://medium.com/the-exponent-log/coding-apps-with-react-native-at-exponent-7a5922da27bf#.q974ztlmb)
 
 ### My linting preferences
 - [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)   
@@ -61,10 +64,10 @@ Still unsure about the `global` and `commonComponents` path...
 
 **package.json** devDependencies:
 ```
-"devDependencies": {
+  "devDependencies": {
     "babel-eslint": "^5.0.0-beta6",
     "eslint": "^1.10.3",
-    "eslint-config-airbnb": "^2.0.0",
+    "eslint-config-airbnb": "^5.0.0",
     "eslint-plugin-react": "^3.11.3"
   }
 ```
@@ -76,13 +79,19 @@ Still unsure about the `global` and `commonComponents` path...
   "parser": "babel-eslint",
   "plugins": [],
   "rules": {
+    "arrow-body-style": [1, "as-needed"],
     "comma-dangle": 0,
+    "default-case": 0,
+    "prefer-template": 1,
     "no-use-before-define": 0,
     "no-unused-vars": 1,
     "new-cap": 0,
     "no-console": 0,
+    "key-spacing": 1,
     "jsx-quotes": 0,
     "react/jsx-boolean-value": 0,
+    "react/jsx-no-bind": 1,
+    "react/wrap-multilines": 1,
     "semi": [2, "never"],
     "strict": 0
   }
