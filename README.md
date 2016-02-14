@@ -43,10 +43,13 @@ Hold on: I know that it can seem weird at first but keeping Redux stuff in its o
 The Redux store will have a reducer for each screen and a global one for the information shared across all the app (e.g. logout action, logged user state).
 Still unsure about the `global` and `commonComponents` path...
 
-
+### React-Native news 
+- [Medium](https://medium.com/tag/react-native/latest)   
+- [Reactnative.com](http://www.reactnative.com/)
+- [Twitter](https://twitter.com/hashtag/reactnative)
+- 
 ### Interesting links
 - [The famouse Movies example app](http://www.toptal.com/react/tips-and-practices): It is a good example, even if it's a bit outdated.
-- [Reactnative.com, A LOT of interesting components and posts about react native](http://www.reactnative.com/)
 - [An in depth tutorial for iOS](http://www.raywenderlich.com/99473/introducing-react-native-building-apps-javascript)
 - [React.js Best Practices and Tips by Toptal Developers](http://www.toptal.com/react/tips-and-practices)
 - [Official Facebook repo of css-layout](https://github.com/facebook/css-layout): Some essential info about react-css styling
