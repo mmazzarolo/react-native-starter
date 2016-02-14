@@ -46,8 +46,8 @@ Still unsure about the `global` and `commonComponents` path...
 ### React-Native news 
 - [Medium](https://medium.com/tag/react-native/latest)   
 - [Reactnative.com](http://www.reactnative.com/)
-- [Twitter](https://twitter.com/hashtag/reactnative)
-- 
+- [Twitter](https://twitter.com/hashtag/reactnative)  
+
 ### Interesting links
 - [The famouse Movies example app](http://www.toptal.com/react/tips-and-practices): It is a good example, even if it's a bit outdated.
 - [An in depth tutorial for iOS](http://www.raywenderlich.com/99473/introducing-react-native-building-apps-javascript)
