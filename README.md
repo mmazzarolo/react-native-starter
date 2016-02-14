@@ -3,7 +3,7 @@ I've been playing with React-Native for a while and this is the directory struct
 
 ```
 |-- src
-|   |-- app.js 
+|   |-- app.js
 |   |-- routes.js
 |   `-- helpers
 |       |-- somethingWrapper.js
@@ -43,7 +43,11 @@ Hold on: I know that it can seem weird at first but keeping Redux stuff in its o
 The Redux store will have a reducer for each screen and a global one for the information shared across all the app (e.g. logout action, logged user state).
 Still unsure about the `global` and `commonComponents` path...
 
+<<<<<<< HEAD
+### React-Native news
+=======
 ### React-Native news 
+>>>>>>> ad646514ff31a2792d150ef4bf408db87369bb90
 - [Medium](https://medium.com/tag/react-native/latest)   
 - [Reactnative.com](http://www.reactnative.com/)
 - [Twitter](https://twitter.com/hashtag/reactnative)  
@@ -53,7 +57,7 @@ Still unsure about the `global` and `commonComponents` path...
 - [An in depth tutorial for iOS](http://www.raywenderlich.com/99473/introducing-react-native-building-apps-javascript)
 - [React.js Best Practices and Tips by Toptal Developers](http://www.toptal.com/react/tips-and-practices)
 - [Official Facebook repo of css-layout](https://github.com/facebook/css-layout): Some essential info about react-css styling
-- [Discussion/fixes about the android slow transitions](https://github.com/facebook/react-native/issues/3049) 
+- [Discussion/fixes about the android slow transitions](https://github.com/facebook/react-native/issues/3049)
 - [Some interesting stuff about stateless components](https://medium.com/@joshblack/stateless-components-in-react-0-14-f9798f8b992d#.shdm8klow)
 - [A better file structure for React/Redux](http://marmelab.com/blog/2015/12/17/react-directory-structure.html)
 - [Components, components, components](https://js.coach/react-native)
