@@ -54,6 +54,7 @@ Still unsure about the `global` and `commonComponents` path...
 - [Some interesting stuff about stateless components](https://medium.com/@joshblack/stateless-components-in-react-0-14-f9798f8b992d#.shdm8klow)
 - [A better file structure for React/Redux](http://marmelab.com/blog/2015/12/17/react-directory-structure.html)
 - [Components, components, components](https://js.coach/react-native)
+- [React Native’s LayoutAnimation is Awesome](https://medium.com/@Jpoliachik/react-native-s-layoutanimation-is-awesome-4a4d317afd3e?source=tags---)
 - [Some tips on code styling](https://medium.com/the-exponent-log/coding-apps-with-react-native-at-exponent-7a5922da27bf#.q974ztlmb)
 
 ### My linting preferences
