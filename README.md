@@ -43,11 +43,7 @@ Hold on: I know that it can seem weird at first but keeping Redux stuff in its o
 The Redux store will have a reducer for each screen and a global one for the information shared across all the app (e.g. logout action, logged user state).
 Still unsure about the `global` and `commonComponents` path...
 
-<<<<<<< HEAD
-### React-Native news
-=======
 ### React-Native news 
->>>>>>> ad646514ff31a2792d150ef4bf408db87369bb90
 - [Medium](https://medium.com/tag/react-native/latest)   
 - [Reactnative.com](http://www.reactnative.com/)
 - [Twitter](https://twitter.com/hashtag/reactnative)  
