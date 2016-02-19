@@ -1,48 +1,3 @@
-### React-Native + Redux Project structure (WIP)
-I've been playing with React-Native for a while and this is the directory structure that suits better a RN app for me.
-
-```
-|-- src
-|   |-- app.js
-|   |-- routes.js
-|   `-- helpers
-|       |-- somethingWrapper.js
-|       |-- fetchUtils.js
-|   `-- screens
-|       |-- AuthScreen
-|           `-- index.js
-|           `-- authActions.js
-|           `-- authConstants.js
-|           `-- authReducer.js
-|           `-- components
-|               `-- FormButton
-|               `-- ErrorBar
-|       |-- MessageScreen
-|           `-- index.js
-|           `-- messageActions.js
-|           `-- messageConstants.js
-|           `-- messageReducer.js
-|           `-- components
-|               `-- SkipButton
-|               `-- MessageText
-|               `-- TitleBar
-|   `-- commonComponents
-|       `-- NavDrawer
-|       `-- SearchBar
-|       `-- BottomBar
-|   `-- global
-|       `-- globalActions.js
-|       `-- globalConstants.js
-|       `-- globalReducer.js
-`-- android
-`-- ios
-`-- index.ios.js
-`-- index.android.js
-```
-Hold on: I know that it can seem weird at first but keeping Redux stuff in its own Screen component means A LOT more portability.
-The Redux store will have a reducer for each screen and a global one for the information shared across all the app (e.g. logout action, logged user state).
-Still unsure about the `global` and `commonComponents` path...
-
 ### React-Native news 
 - [Medium](https://medium.com/tag/react-native/latest)   
 - [Reactnative.com](http://www.reactnative.com/)
@@ -59,6 +14,8 @@ Still unsure about the `global` and `commonComponents` path...
 - [Components, components, components](https://js.coach/react-native)
 - [React Native’s LayoutAnimation is Awesome](https://medium.com/@Jpoliachik/react-native-s-layoutanimation-is-awesome-4a4d317afd3e?source=tags---)
 - [Some tips on code styling](https://medium.com/the-exponent-log/coding-apps-with-react-native-at-exponent-7a5922da27bf#.q974ztlmb)
+- [React on ES6+](https://babeljs.io/blog/2015/06/07/react-on-es6-plus)  
+- 
 
 ### My linting preferences
 - [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)   
