@@ -1,3 +1,26 @@
+<p align="center">
+  <img align="center" src="https://raw.githubusercontent.com/mmazzarolo/react-native-starter/master/src/assets/images/logo.png" width="520">  
+</p>
+
+<br />
+<br />
+<br />
+
+# What's React-Native Starter?
+React-Native Starter is a boilerplate for a React-Native with the following goals in mind:
+- Clear and easy way to handle an authentication flow
+- Redux + ImmutableJS for managing all the app states (and the routing too)
+- [React-native-router-flux](https://github.com/aksonov/react-native-router-flux) as router implementation (and maybe navigator-experimental too in the future)
+- Code splitted in many small generic components
+- A way to handle many common React-Native problem (i.e.: keyboard overlapping TextInput)
+- Clean look for both iOS and Android
+- [ES6+ syntax](https://babeljs.io/blog/2015/06/07/react-on-es6-plus) in every module, following [AirBnB coding style](https://github.com/airbnb/javascript)
+- Await/Async for asynchronous tasks
+- Configurable colors/dimensions/strings
+
+# React-Native tips
+
+# React-Native resources
 ### React-Native news
 - [Medium](https://medium.com/tag/react-native/latest)   
 - [Reactnative.com](http://www.reactnative.com/)
