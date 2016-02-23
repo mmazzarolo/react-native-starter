@@ -6,7 +6,7 @@
 <br />
 <br />
 
-# What's React-Native Starter?
+# What's React-Native Starter? (Work in progess)
 React-Native Starter is a boilerplate for a React-Native with the following goals in mind:
 - Clear and easy way to handle an authentication flow
 - Redux + ImmutableJS for managing all the app states (and the routing too)
