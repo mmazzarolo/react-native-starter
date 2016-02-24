@@ -27,8 +27,8 @@ class RegisterModal extends React.Component {
         isOpen={true}
         onClosed={Actions.dismiss}
       >
-        <TextInput placeholder='Email' selectionColor={colors.MAIN} />
-        <TextInput placeholder='Password' selectionColor={colors.MAIN} />
+        <TextInput placeholder='Email' style={styles.textInput} selectionColor={colors.MAIN} />
+        <TextInput placeholder='Password' style={styles.textInput} selectionColor={colors.MAIN} />
         <Button text='Register' buttonStyle={styles.button} />
         <KeyboardSpacer />
       </ModalBox>
@@ -42,7 +42,10 @@ const styles = StyleSheet.create({
     padding: 8,
   },
   button: {
-   margin: 12,
+    margin: 12,
+  },
+  textInput: {
+    height: 40,
   }
 })
 

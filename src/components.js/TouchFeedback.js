@@ -7,12 +7,8 @@ const IS_RIPPLE_EFFECT_SUPPORTED = Platform.Version >= 21
 
 export default class TouchFeedback extends React.Component {
   render() {
-    let background
-    background = IS_RIPPLE_EFFECT_SUPPORTED
-      ? TouchableNativeFeedback.Ripple(this.props.pressColor, false)
-      : TouchableNativeFeedback.SelectableBackground()
-
-    if (Platform.Version >= 21) {
+    if (IS_RIPPLE_EFFECT_SUPPORTED && Platform.OS === 'android') {
+      const background = TouchableNativeFeedback.Ripple(this.props.pressColor, false)
       return (
         <TouchableNativeFeedback {...this.props} background={background}
           delayPressIn={0} delayPressOut={0}
