@@ -3,12 +3,14 @@ import thunkMiddleware from 'redux-thunk'
 import createLogger from 'redux-logger'
 import Immutable from 'immutable'
 
-// import global from './global/globalReducer'
-import authReducer from './modules/auth'
+import global from './modules/global'
+import auth from './modules/auth'
+import signup from './modules/signup'
 
 const rootReducer = combineReducers({
-  // global,
-  authReducer,
+  global,
+  auth,
+  signup
 })
 
 const stateTransformer = (state) => {

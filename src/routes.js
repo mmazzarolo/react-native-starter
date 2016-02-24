@@ -2,7 +2,7 @@ import React, { Navigator, Platform } from 'react-native'
 import ReactNativeRouter, { Route, Schema } from 'react-native-router-flux'
 import { connect } from 'react-redux'
 import AuthScreen from 'AuthScreen'
-import RegisterModal from 'RegisterModal'
+import SignupModal from 'SignupModal'
 // import LoginModal from 'LoginModal'
 
 const Router = connect()(ReactNativeRouter.Router)
@@ -26,8 +26,7 @@ export default class Routes extends React.Component {
         />
 
         <Route schema='boot' component={AuthScreen} name='auth' initial={true} />
-        <Route schema='boot' component={RegisterModal} name='register' type='modal' />
-        {/*<Route schema='boot' component={LoginModal} name='login' type='modal' />*/}
+        <Route schema='boot' component={SignupModal} name='signup' type='modal' />
 
       </Router>
     )

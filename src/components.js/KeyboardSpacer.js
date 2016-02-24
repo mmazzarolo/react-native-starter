@@ -6,24 +6,35 @@ import React, { Platform, Animated, View, DeviceEventEmitter } from 'react-nativ
 const KITKAT = 19
 
 class KeyboardSpacer extends React.Component {
+  static propTypes = {
+    isScreenVisible: React.PropTypes.bool,
+  }
+
+  static defaultProps = {
+    isScreenVisible: true,
+  }
+
   constructor(props) {
     super(props)
     this.state = { keyboardHeightAnim: new Animated.Value(0) }
   }
 
   componentWillMount() {
-    this._keyboardWillShowSubscription = DeviceEventEmitter.addListener('keyboardDidShow', e => this._keyboardWillShow(e))
-    this._keyboardWillHideSubscription = DeviceEventEmitter.addListener('keyboardDidHide', e => this._keyboardWillHide(e))
+    this._keyboardDidShowSubscription = DeviceEventEmitter.addListener('keyboardDidShow', e => {
+      this._handleKeyboardShow(e)
+    })
+    this._keyboardDidHideSubscription = DeviceEventEmitter.addListener('keyboardDidHide', e => {
+      this._handleKeyboardHide(e)
+    })
   }
 
   componentWillUnmount() {
-    this._keyboardWillShowSubscription.remove()
-    this._keyboardWillHideSubscription.remove()
+    this._keyboardDidShowSubscription.remove()
+    this._keyboardDidHideSubscription.remove()
   }
 
-  _keyboardWillShow(e) {
+  _handleKeyboardShow(e) {
     if (this.props.isScreenVisible) {
-      console.log('_keyboardWillShow')
       Animated.timing(this.state.keyboardHeightAnim, {
         toValue: e.endCoordinates.height,
         duration: 250
@@ -31,9 +42,8 @@ class KeyboardSpacer extends React.Component {
     }
   }
 
-  _keyboardWillHide() {
+  _handleKeyboardHide() {
     if (this.props.isScreenVisible) {
-      console.log('_keyboardWillHide')
       Animated.timing(this.state.keyboardHeightAnim, {
         toValue: 0,
         duration: 250
@@ -44,14 +54,6 @@ class KeyboardSpacer extends React.Component {
   render() {
     return <Animated.View style={{ height: this.state.keyboardHeightAnim }} />
   }
-}
-
-KeyboardSpacer.propTypes = {
-  isScreenVisible: React.PropTypes.bool,
-}
-
-KeyboardSpacer.defaultProps = {
-  isScreenVisible: true,
 }
 
 // The app pans to show the Keyboard below Kitkat (We set it to resize from Kitkat to upwards)

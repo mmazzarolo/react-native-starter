@@ -19,8 +19,8 @@ class AuthScreen extends React.Component {
     Actions.login()
   }
 
-  _handleRegisterPress = () => {
-    Actions.register()
+  _handleSignupPress = () => {
+    Actions.signup()
   }
 
   render() {
@@ -32,7 +32,7 @@ class AuthScreen extends React.Component {
         </View>
         <View style={{ flexDirection: 'row' }}>
           <Button text='LOGIN' onPress={this._handleLoginPress} buttonStyle={styles.button} />
-          <Button text='REGISTER' onPress={this._handleRegisterPress} buttonStyle={styles.button} />
+          <Button text='REGISTER' onPress={this._handleSignupPress} buttonStyle={styles.button} />
         </View>
       </View>
     )

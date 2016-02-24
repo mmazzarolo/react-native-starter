@@ -1,7 +1,7 @@
 /**
- * @providesModule RegisterModal
+ * @providesModule SignupModal
  */
-import React, { StyleSheet, TextInput } from 'react-native'
+import React, { PropTypes, StyleSheet, TextInput } from 'react-native'
 import { connect } from 'react-redux'
 import { Actions } from 'react-native-router-flux'
 import ModalBox from 'react-native-modalbox'
@@ -10,13 +10,29 @@ import Button from 'Button'
 import KeyboardSpacer from 'KeyboardSpacer'
 import * as colors from 'ColorsConfig'
 
-import * as registerActions from 'ReactNativeApp/src/redux/modules/register'
+import * as signupActions from 'ReactNativeApp/src/redux/modules/signup'
 
 const mapStateToProps = state => {
-  return {}
+  return {
+    error: state.signup.error,
+    isLoading: state.signup.isLoading,
+    user: state.signup.user
+  }
 }
 
-class RegisterModal extends React.Component {
+@connect(mapStateToProps, signupActions)
+export default class SignupModal extends React.Component {
+  static propTypes = {
+    error: PropTypes.string,
+    isLoading: PropTypes.bool,
+    user: PropTypes.object,
+    signup: PropTypes.func,
+  }
+
+  _handleButtonPress = () => {
+    this.props.signup('', '')
+  }
+
   render() {
     return (
       <ModalBox
@@ -29,7 +45,7 @@ class RegisterModal extends React.Component {
       >
         <TextInput placeholder='Email' style={styles.textInput} selectionColor={colors.MAIN} />
         <TextInput placeholder='Password' style={styles.textInput} selectionColor={colors.MAIN} />
-        <Button text='Register' buttonStyle={styles.button} />
+        <Button text='Signup' buttonStyle={styles.button} onPress={this._handleButtonPress} />
         <KeyboardSpacer />
       </ModalBox>
     )
@@ -42,11 +58,10 @@ const styles = StyleSheet.create({
     padding: 8,
   },
   button: {
-    margin: 12,
+    margin: 20,
   },
   textInput: {
+    marginTop: 10,
     height: 40,
   }
 })
-
-export default connect(mapStateToProps, registerActions)(RegisterModal)
