@@ -5,13 +5,11 @@ import React, { PropTypes, StyleSheet, Text, View, } from 'react-native'
 import TouchFeedback from 'TouchFeedback'
 import * as colors from 'ColorsConfig'
 
-export default ({ text, onPress, buttonStyle, textStyle }) => (
-  <TouchFeedback onPress={onPress} style={{ flex: 1 }}>
-    <View style={[styles.container, buttonStyle]}>
+export default ({ onPress, buttonStyle, textStyle, style, children }) => (
+  <TouchFeedback onPress={onPress} style={[styles.container, style]}>
       <Text style={[styles.text, textStyle]}>
-        {text}
+        {children}
       </Text>
-    </View>
   </TouchFeedback>
 )
 

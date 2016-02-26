@@ -1,7 +1,7 @@
 /**
  * @providesModule TouchFeedback
  */
-import React, { TouchableNativeFeedback, TouchableOpacity, Platform } from 'react-native'
+import React, { View, TouchableNativeFeedback, TouchableOpacity, Platform } from 'react-native'
 
 const IS_RIPPLE_EFFECT_SUPPORTED = Platform.Version >= 21
 
@@ -13,13 +13,14 @@ export default class TouchFeedback extends React.Component {
         <TouchableNativeFeedback {...this.props} background={background}
           delayPressIn={0} delayPressOut={0}
         >
-          {this.props.children}
+          <View style={this.props.style}>{this.props.children}</View>
+
         </TouchableNativeFeedback>
       )
     } else {
       return (
         <TouchableOpacity {...this.props}>
-          {this.props.children}
+            {this.props.children}
         </TouchableOpacity>
       )
     }
