@@ -34,8 +34,8 @@ class AuthScreen extends React.Component {
         <SocialButton type='facebook' style={styles.socialButton} />
         <SocialButton type='google' style={styles.socialButton} />
         <View style={{ flexDirection: 'row' }}>
-          <Button onPress={this._handleLoginPress} style={styles.button}>Login</Button>
-          <Button onPress={this._handleSignupPress} style={styles.button}>Register</Button>
+          <Button onPress={this._handleLoginPress} style={styles.button}>Log In</Button>
+          <Button onPress={this._handleSignupPress} style={styles.button}>Sign Up</Button>
         </View>
       </View>
     )
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   logoContainer: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    // justifyContent: 'flex-start',
   },
   logo: {
     width: width * 0.80,

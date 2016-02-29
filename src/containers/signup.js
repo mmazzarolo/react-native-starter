@@ -45,7 +45,7 @@ export default class SignupModal extends React.Component {
       >
         <TextInput placeholder='Email' style={styles.textInput} selectionColor={colors.MAIN} />
         <TextInput placeholder='Password' style={styles.textInput} selectionColor={colors.MAIN} />
-        <Button text='Signup' buttonStyle={styles.button} onPress={this._handleButtonPress} />
+        <Button onPress={this._handleButtonPress} style={styles.button}>Sign Up</Button>
         <KeyboardSpacer />
       </ModalBox>
     )
