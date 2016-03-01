@@ -1,13 +1,14 @@
 import { Record } from 'immutable'
+import { Actions } from 'react-native-router-flux'
 
 export const LOGOUT = 'global/LOGOUT'
 export const RESET_STORE = 'global/RESET_STORE'
 
 import { SESSION_TOKEN_SUCCESS } from './auth'
-import { SIGNUP_SUCCESS } from './signup'
+import { SIGNUP_SUCCESS } from './auth'
 
 const InitialState = Record({
-  user: null,
+  loggedUser: null,
 })
 
 const initialState = new InitialState
@@ -21,13 +22,11 @@ export default function reducer(state = initialState, action) {
     case SESSION_TOKEN_SUCCESS:
     case SIGNUP_SUCCESS:
       return state
-        .set('user', action.payload)
+        .set('loggedUser', action.payload)
 
     default:
       return state
   }
 }
 
-export const logout = () => {
-  return { type: LOGOUT }
-}
+export const logout = () => ({ type: LOGOUT })

@@ -4,19 +4,21 @@
 import React, { PropTypes, StyleSheet, TextInput } from 'react-native'
 import { connect } from 'react-redux'
 import { Actions } from 'react-native-router-flux'
+import { reduxForm } from 'redux-form'
 import ModalBox from 'react-native-modalbox'
 
 import Button from 'Button'
+import SignupForm from 'SignupForm'
 import KeyboardSpacer from 'KeyboardSpacer'
 import * as colors from 'ColorsConfig'
 
-import * as signupActions from 'ReactNativeApp/src/redux/modules/signup'
+
+import * as signupActions from 'ReactNativeApp/src/redux/modules/auth'
 
 const mapStateToProps = state => {
   return {
-    error: state.signup.error,
-    isLoading: state.signup.isLoading,
-    user: state.signup.user
+    error: state.auth.error,
+    isLoading: state.auth.isLoading,
   }
 }
 
@@ -24,14 +26,11 @@ const mapStateToProps = state => {
 export default class SignupModal extends React.Component {
   static propTypes = {
     error: PropTypes.string,
-    isLoading: PropTypes.bool,
-    user: PropTypes.object,
-    signup: PropTypes.func,
+    isLoading: PropTypes.bool.isRequired,
+    signup: PropTypes.func.isRequired,
   }
 
-  _handleButtonPress = () => {
-    this.props.signup('', '')
-  }
+  _handleButtonPress = form => this.props.signup(form.email, form.password)
 
   render() {
     return (
@@ -43,9 +42,7 @@ export default class SignupModal extends React.Component {
         isOpen={true}
         onClosed={Actions.dismiss}
       >
-        <TextInput placeholder='Email' style={styles.textInput} selectionColor={colors.MAIN} />
-        <TextInput placeholder='Password' style={styles.textInput} selectionColor={colors.MAIN} />
-        <Button onPress={this._handleButtonPress} style={styles.button}>Sign Up</Button>
+        <SignupForm onSubmit={this._handleButtonPress} />
         <KeyboardSpacer />
       </ModalBox>
     )

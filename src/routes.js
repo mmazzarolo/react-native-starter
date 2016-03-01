@@ -3,7 +3,6 @@ import ReactNativeRouter, { Route, Schema } from 'react-native-router-flux'
 import { connect } from 'react-redux'
 import AuthScreen from 'AuthScreen'
 import SignupModal from 'SignupModal'
-// import LoginModal from 'LoginModal'
 
 const Router = connect()(ReactNativeRouter.Router)
 

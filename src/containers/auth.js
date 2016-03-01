@@ -1,7 +1,7 @@
 /**
  * @providesModule AuthScreen
  */
-import React, { Dimensions, Image, StyleSheet, View, } from 'react-native'
+import React, { Dimensions, Image, PropTypes, StyleSheet, View, } from 'react-native'
 import Button from 'Button'
 import SocialButton from 'SocialButton'
 import { connect } from 'react-redux'
@@ -11,18 +11,33 @@ import * as authActions from '../redux/modules/auth'
 const { width } = Dimensions.get('window')
 
 const mapStateToProps = state => {
-  return {}
+  return {
+    error: state.auth.error,
+    isLoading: state.auth.isLoading,
+    loggedUser: state.global.loggedUser
+  }
 }
 
-class AuthScreen extends React.Component {
-
-  _handleLoginPress = () => {
-    Actions.login()
+@connect(mapStateToProps, authActions)
+export default class AuthScreen extends React.Component {
+  static propTypes = {
+    error: PropTypes.string,
+    isLoading: PropTypes.bool.isRequired,
+    loggedUser: PropTypes.object,
+    checkSessionToken: PropTypes.func.isRequired,
   }
 
-  _handleSignupPress = () => {
-    Actions.signup()
+  componentDidMount() {
+    this.props.checkSessionToken()
   }
+
+  componentDidMount() {
+    if (this.props.loggedUser) Actions.main()
+  }
+
+  _handleLoginPress = () => Actions.login()
+
+  _handleSignupPress = () => Actions.signup()
 
   render() {
     const imageSource = require('ReactNativeApp/src/assets/images/logo.png')
@@ -49,7 +64,6 @@ const styles = StyleSheet.create({
   logoContainer: {
     flex: 1,
     alignItems: 'center',
-    // justifyContent: 'flex-start',
   },
   logo: {
     width: width * 0.80,
@@ -64,5 +78,3 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
 })
-
-export default connect(mapStateToProps, authActions)(AuthScreen)
