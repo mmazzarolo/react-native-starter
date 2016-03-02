@@ -29,3 +29,4 @@ I'm creating React-Native with the following goals in mind:
 - [ES6+ syntax](https://babeljs.io/blog/2015/06/07/react-on-es6-plus) in every module, following [AirBnB coding style](https://github.com/airbnb/javascript)
 - Await/Async for asynchronous tasks
 - Configurable colors/strings
+- [Bottom buttons fade-in after session token check](http://im.ezgif.com/tmp/ezgif-1885810437.gif)
