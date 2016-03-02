@@ -1,17 +1,23 @@
 /**
  * @providesModule Button
  */
-import React, { PropTypes, StyleSheet, Text, View, } from 'react-native'
+import React, { StyleSheet, Text, View } from 'react-native'
 import TouchFeedback from 'TouchFeedback'
 import * as colors from 'ColorsConfig'
 
-export default ({ onPress, buttonStyle, textStyle, style, children }) => (
+const Button = ({ onPress, style, children }) => (
   <TouchFeedback onPress={onPress} style={[styles.container, style]}>
-      <Text style={[styles.text, textStyle]}>
+      <Text style={styles.text}>
         {children}
       </Text>
   </TouchFeedback>
 )
+
+Button.propTypes = {
+  onPress: React.PropTypes.func,
+  style: View.propTypes.style,
+  children: React.PropTypes.node,
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -29,3 +35,5 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   }
 })
+
+export default Button

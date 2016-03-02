@@ -1,14 +1,15 @@
 /**
  * @providesModule SocialButton
  */
-import React, { PropTypes, StyleSheet, Text, View, } from 'react-native'
+import React, { StyleSheet, Text, View, } from 'react-native'
 import TouchFeedback from 'TouchFeedback'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import * as colors from 'ColorsConfig'
+import * as strings from 'StringsConfig'
 
-export default ({ type, onPress, style }) => {
-  const backgroundColor = type === 'facebook' ? colors.FACEBOOK : colors.GOOGLE
-  const text = type === 'facebook' ? 'Login with Facebook' : 'Login with Google'
+const SocialButton = ({ type, onPress, style }) => {
+  const backgroundColor = type === 'facebook' ? colors.FACEBOOK_BUTTON : colors.GOOGLE_BUTTON
+  const text = type === 'facebook' ? strings.FACEBOOK_LOGIN : strings.GOOGLE_LOGIN
   return (
     <TouchFeedback onPress={onPress} style={[styles.container, style, { backgroundColor }]}>
       <Icon name={type} size={24} color='white' style={styles.icon} />
@@ -18,9 +19,19 @@ export default ({ type, onPress, style }) => {
   )
 }
 
+SocialButton.propTypes = {
+  type: React.PropTypes.oneOf(['facebook', 'google']),
+  onPress: React.PropTypes.func,
+  style: View.propTypes.style,
+}
+
+SocialButton.defaultProps = {
+  type: 'facebook',
+  onPress: null,
+}
+
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.FACEBOOK,
     borderColor: colors.TRANSPARENT_DARK,
     borderRadius: 2,
     borderWidth: 2,
@@ -37,3 +48,5 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
 })
+
+export default SocialButton

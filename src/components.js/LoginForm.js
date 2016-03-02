@@ -1,5 +1,5 @@
 /**
- * @providesModule SignupForm
+ * @providesModule LoginForm
  */
 import React, { TextInput, View, StyleSheet } from 'react-native'
 import { reduxForm } from 'redux-form'
@@ -21,8 +21,8 @@ const validate = values => {
   return errors
 }
 
-@reduxForm({ form: 'signup', fields, validate })
-export default class SignupForm extends React.Component {
+@reduxForm({ form: 'Login', fields, validate })
+export default class LoginForm extends React.Component {
   static propTypes = {
     fields: React.PropTypes.object.isRequired,
     handleSubmit: React.PropTypes.func.isRequired,
@@ -41,7 +41,7 @@ export default class SignupForm extends React.Component {
           style={styles.button}
           isEnabled={isValid}
           isLoading={submitting}
-          text={strings.AUTH_SIGNUP_BUTTON}
+          text={strings.AUTH_LOGIN_BUTTON}
         />
       </View>
     )

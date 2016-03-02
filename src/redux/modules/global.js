@@ -1,5 +1,4 @@
 import { Record } from 'immutable'
-import { Actions } from 'react-native-router-flux'
 
 export const LOGOUT = 'global/LOGOUT'
 export const RESET_STORE = 'global/RESET_STORE'

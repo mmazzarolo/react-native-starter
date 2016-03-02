@@ -1,12 +1,12 @@
 /**
- * @providesModule SignupModal
+ * @providesModule LoginModal
  */
 import React, { PropTypes, StyleSheet } from 'react-native'
 import { connect } from 'react-redux'
 import { Actions } from 'react-native-router-flux'
 import ModalBox from 'react-native-modalbox'
 
-import SignupForm from 'SignupForm'
+import LoginForm from 'LoginForm'
 import KeyboardSpacer from 'KeyboardSpacer'
 
 import * as authActions from 'ReactNativeApp/src/redux/modules/auth'
@@ -17,14 +17,14 @@ const mapStateToProps = state => ({
 })
 
 @connect(mapStateToProps, authActions)
-export default class SignupModal extends React.Component {
+export default class LoginModal extends React.Component {
   static propTypes = {
     error: PropTypes.string,
     isLoading: PropTypes.bool.isRequired,
-    signup: PropTypes.func.isRequired,
+    login: PropTypes.func.isRequired,
   }
 
-  _handleButtonPress = form => this.props.signup(form.email, form.password)
+  _handleButtonPress = form => this.props.login(form.email, form.password)
 
   render() {
     return (
@@ -36,7 +36,7 @@ export default class SignupModal extends React.Component {
         isOpen={true}
         onClosed={Actions.dismiss}
       >
-        <SignupForm onSubmit={this._handleButtonPress} />
+        <LoginForm onSubmit={this._handleButtonPress} />
         <KeyboardSpacer />
       </ModalBox>
     )
