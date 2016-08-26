@@ -13,4 +13,3 @@ React-Native Starter is a boilerplate for a a simple auth flow I use daily.
 - Redux saga for side-effects
 - `react-native-i18n` for internationalization
 - NavigationExperimental for routing
-- 
