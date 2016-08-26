@@ -1,0 +1,61 @@
+{
+  "name": "ReactNativeBoilerplate",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "reset": "watchman watch-del-all && rm -rf node_modules/ && npm cache clean && npm prune && npm i",
+    "android:build": "cd android && ./gradlew assembleRelease",
+    "android:install": "cd android && ./gradlew assembleRelease && ./gradlew installRelease",
+    "android:deploy": "fastlane android alpha",
+    "android:shake": "$ANDROID_HOME/platform-tools/adb devices | grep '\\t' | awk '{print $1}' | sed 's/\\s//g' | xargs -I {} $ANDROID_HOME/platform-tools/adb -s {} shell input keyevent 82",
+    "ios:deploy": "fastlane ios alpha",
+    "lint": "eslint src",
+    "test": "ava --verbose",
+    "test:watch": "npm run test -- --watch",
+    "test:coverage": "nyc npm run test"
+  },
+  "dependencies": {
+    "babel-eslint": "^6.1.2",
+    "eslint-plugin-react": "^5.2.2",
+    "lodash": "^4.14.1",
+    "parse": "^1.9.0",
+    "react": "^15.2.0",
+    "react-native": "^0.30.0",
+    "react-native-animatable": "^0.6.1",
+    "react-native-i18n": "0.0.8",
+    "react-native-vector-icons": "^2.0.3",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2",
+    "redux-logger": "^2.6.1",
+    "redux-saga": "^0.11.0"
+  },
+  "devDependencies": {
+    "ava": "^0.15.2",
+    "babel-core": "^6.11.4",
+    "babel-polyfill": "^6.9.1",
+    "eslint": "^3.2.0",
+    "eslint-config-mostaza-react": "^1.0.3",
+    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-jsx-a11y": "^2.0.1",
+    "eslint-plugin-react": "^6.0.0",
+    "fetch-mock": "^5.0.3",
+    "mockery": "^1.7.0",
+    "nyc": "^7.1.0",
+    "proxyquire": "^1.7.10",
+    "react-native-mock": "^0.2.5",
+    "sinon": "^1.17.5"
+  },
+  "ava": {
+    "babel": "inherit",
+    "files": [
+      "src/**/*spec.js"
+    ],
+    "require": [
+      "babel-register",
+      "babel-polyfill",
+      "react-native-mock/mock",
+      "./test/setup"
+    ]
+  }
+}

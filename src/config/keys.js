@@ -1,0 +1,2 @@
+export const PARSE_SERVER_URL = 'YOUR_PARSE_SERVER_URL'
+export const PARSE_APP_ID = 'YOUR_PARSE_APP_ID'
